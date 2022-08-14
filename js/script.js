@@ -17,7 +17,7 @@ function renderTodo(todo) {
   node.innerHTML = `
     <input id="${todo.id}" type="checkbox"/>
     <label for="${todo.id}" class="tick js-tick"></label>
-    <span>${"You will need to clock-out at: " + todo.text}</span>
+    <span style=" font-size: 15px;">${"Clock-in: <b>" + clockIn + "</b>, You will need to clock-out at: <b>" + todo.text+"</b>"}</span>
     <button class="delete-todo js-delete-todo">
     <svg><use href="#delete-icon"></use></svg>
     </button>
@@ -55,7 +55,6 @@ function deleteTodo(key) {
   };
   todoItems = todoItems.filter(item => item.id !== Number(key));
   renderTodo(todo);
-  document.getElementById("timeInput").style.display = "inline";
 }
 
 function time_convert(num)
@@ -65,37 +64,36 @@ function time_convert(num)
    return hours + ":" + minutes;         
  }
 
-const form = document.querySelector('.js-form');
+const form = document.querySelector('#clockForm');
 form.addEventListener('submit', event => {
   event.preventDefault();
   const input = document.querySelector('.js-todo-input');
   const [hoursInput, minutesInput] = input.value.split(':');
-  hourInt = parseInt(hoursInput)
-  hourConvert = (hourInt % 60)
-  minuteInt = parseInt(minutesInput)
-
-  //verificar isso
-  if (minuteInt < 10) {
-    minuteInt = "0"+minuteInt;
-    return minuteInt
+  
+  function completarZero(n) {
+    return n <= 9 ? `0${n}` : `${n}`;
   }
-
-
-  hour = time_convert((hourInt * 60)+ minuteInt + 510)
-  duration = time_convert(510)
   
+  dataForm = hoursInput + ":" + minutesInput;
   
-  clockOut = (hour);
+  dataForm = "2022-08-10T" + dataForm;
+  dataR = new Date(dataForm);
   
+  HourIn = completarZero(dataR.getHours())
+  minuteIn = completarZero(dataR.getMinutes())
+  dataR.setHours(dataR.getHours() + 8);
+  dataR.setMinutes(dataR.getMinutes() + 30);
+  hora = completarZero(dataR.getHours());
+  minuto = completarZero(dataR.getMinutes());
   
-
+  clockIn = (HourIn+ ":" +minuteIn)
+  clockOut = (hora + ":" + minuto);
 
   const text = input.value.trim();
   if (text !== '') {
     addTodo(clockOut);
     input.value = '';
     input.focus();
-    document.getElementById("timeInput").style.display = "none";
   }
 });
 
@@ -111,3 +109,8 @@ list.addEventListener('click', event => {
     deleteTodo(itemKey);
   }
 });
+
+var date = new Date();
+var currentDate = date.toISOString().slice(0,10);
+var currentTime = date.getHours() + ':' + date.getMinutes();
+document.getElementById('timeInput').value = currentDate;

@@ -7,10 +7,13 @@ html {
   margin: 0;
   padding: 0;
 }
-h2, p{
-  font-size: 20px;
+h1, h3, p, .input-group-text{
+  padding-top: 10px;
+  position:relative;
+  text-align: center;
   color: ghostwhite;
 }
+
 
 body {
  font-family:
@@ -21,6 +24,7 @@ body {
 }
 
 .container {
+  padding-top: 15px;
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
@@ -43,6 +47,7 @@ body {
 svg {
   width: 64px;
   height: 64px;
+  color: ghostwhite;
 }
 
 .todo-list {
@@ -89,6 +94,7 @@ input[type="checkbox"] {
   content: '✓';
   font-size: 20px;
   display: none;
+  color: green;
 }
 
 .done .tick::before {
@@ -146,3 +152,29 @@ input[type="text"] {
 .todo-list:empty + .empty-state {
   display: flex;
 }
+
+#timeInput {
+  font-size: 15px;
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+#submitButton{
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 0px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  height: 40px;
+  border-radius: 10px;
+}
+form { 
+  margin: 0 auto; 
+  width:250px;
+  padding-top: 20px;
+  }
+  

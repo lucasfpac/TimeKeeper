@@ -1,26 +1,38 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title></title>
+        <title>Clock-out counter</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel="stylesheet">
+        <link href="img/icons8-clock.svg" rel="icon">
+
     </head>
     <body>
     <main>
         <main>
         <div class="container">
-            <h1 class="app-title">TimeKeeper</h1>
+            <h1 class="text-center">Clock-out counter</h1>
+            
+            <link rel="icon" type="image/x-icon" href="img/icons8-clock.svg">
             <ul class="todo-list js-todo-list"></ul>
             <!-- add the empty state here -->
             <div class="empty-state">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 12v-5h-1.999v6.999h5.999v-1.999h-4zm-12.197-4.285c-1.261-1.944-1.035-4.569.675-6.266 1.7-1.687 4.305-1.896 6.235-.645-3.171 1.219-5.692 3.741-6.91 6.911zm18.428 11.18c1.715-1.794 2.771-4.219 2.771-6.896 0-5.522-4.477-10-10.002-10-5.522 0-10 4.477-10 10 0 2.678 1.059 5.104 2.772 6.898l-1.736 4.506c-.159.394.288.759.643.522l3.581-3.122c1.412.761 3.026 1.195 4.742 1.195 1.717 0 3.334-.434 4.744-1.195l3.582 3.122c.355.237.803-.128.643-.522l-1.74-4.508zm-7.23 1.103c-4.412 0-8.001-3.588-8.001-8s3.589-8 8.001-8c4.412 0 8.002 3.588 8.002 8s-3.59 8-8.002 8zm10.553-18.52c-1.697-1.71-4.324-1.937-6.268-.675 3.17 1.218 5.693 3.739 6.912 6.91 1.25-1.931 1.041-4.535-.644-6.235z"/></svg>
-            <h2 class="empty-state__title">Check to see what time do you have to clock-out</h2>
-            <p class="empty-state__description">What time did you clock-in? </p>
+            <object data="img/icons8-clock.svg" width="60" height="60"> </object>
+            <h3 class="text-center">Check to see what time do you have to clock-out</h2>
+            <p class="text-center">Please select the time you clock-in? </p>
             </div>
             <!-- end -->
-            <form class="js-form">
-            <input id ="timeInput"autofocus type="text" aria-label="Enter a new todo item" placeholder="e.g 7:30" class="js-todo-input">
+            <form id="clockForm" class="row row-cols-lg-auto g-3 align-items-center">
+                <div class="col-12">
+                    <div class="input-group">
+                        <input id ="timeInput" autofocus type="time" class="js-todo-input position-relative" value="">
+                    </div>    
+                </div>
+                <div class="col-12">
+                    <button id="submitButton" type="submit" class="btn btn-success position-relative ">Clock-In</button>
+                </div>
             </form>
         </div>
         </main>
@@ -32,7 +44,8 @@
             <symbol id="delete-icon" viewBox="0 0 448 448"><path d="m224 0c-123.710938 0-224 100.289062-224 224s100.289062 224 224 224 224-100.289062 224-224c-.132812-123.65625-100.34375-223.867188-224-224zm124.449219 325.824219c4.15625 4.015625 5.828125 9.964843 4.363281 15.558593s-5.835938 9.964844-11.429688 11.429688-11.542968-.207031-15.558593-4.363281l-101.824219-101.824219-101.824219 101.824219c-6.277343 6.0625-16.257812 5.976562-22.429687-.195313s-6.257813-16.152344-.195313-22.429687l101.824219-101.824219-101.824219-101.824219c-4.15625-4.015625-5.828125-9.964843-4.363281-15.558593s5.835938-9.964844 11.429688-11.429688 11.542968.207031 15.558593 4.363281l101.824219 101.824219 101.824219-101.824219c6.277343-6.0625 16.257812-5.976562 22.429687.195313s6.257813 16.152344.195313 22.429687l-101.824219 101.824219zm0 0" fill="#D80027"/></symbol>
         </defs>
         </svg>
-    
-    </body>
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    </body>
+    
 </html>
