@@ -17,7 +17,7 @@ function renderTodo(todo) {
   node.innerHTML = `
     <input id="${todo.id}" type="checkbox"/>
     <label for="${todo.id}" class="tick js-tick"></label>
-    <span style=" font-size: 15px;">${"Clock-in: <b>" + clockIn + "</b>, You will need to clock-out at: <b>" + todo.text+"</b>"}</span>
+    <span style=" font-size: 15px; background-color: rgb(60, 55, 55); border-radius: 6px;text-align: center">${"Clock-in at: <b>" + clockIn + "</b>, You will need to clock-out at: <b>" + todo.text+"</b>"}</span>
     <button class="delete-todo js-delete-todo">
     <svg><use href="#delete-icon"></use></svg>
     </button>
@@ -33,7 +33,7 @@ function renderTodo(todo) {
 function addTodo(text) {
   const todo = {
     text,
-    checked: false,
+    checked: true,
     id: Date.now(),
   };
 

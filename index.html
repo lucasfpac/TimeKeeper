@@ -11,30 +11,32 @@
     </head>
     <body>
     <main>
-        <div id="main" class="container" content=”width=device-width, initial-scale=1.0”>
-            <div class="container">
-                <h1 class="text-center">Clock-out counter</h1>
-                <link rel="icon" type="image/x-icon" href="img/icons8-clock.svg">
-                <ul class="todo-list js-todo-list"></ul>
-                <!-- add the empty state here -->
-                <div class="empty-state">
-                    <object data="img/icons8-clock.svg" width="60" height="60"> </object>
-                    <h3 class="text-center">Check to see what time do you have to clock-out</h2>
-                    <p class="text-center">Please select the time you clock-in? </p>
-                </div>
-                <!-- end -->
-                <form id="clockForm" class="row row-cols-lg-auto g-3 align-items-center">
-                    <div class="col-12">
-                        <div class="input-group">
-                            <input id ="timeInput" autofocus type="time" class="js-todo-input position-relative" value="">
-                        </div>    
-                    </div>
-                    <div class="col-12">
-                        <button id="submitButton" type="submit" class="btn btn-success position-relative ">Clock-In</button>
-                    </div>
-                </form>
+        
+        <div class="container">
+            <h1 class="text-center">Clock-out counter</h1>
+            <link rel="icon" type="image/x-icon" href="img/icons8-clock.svg">
+            <ul class="todo-list js-todo-lists"></ul>
+            <!-- add the empty state here -->
+            <div class="empty-state">
+                <object data="img/icons8-clock.svg" width="60" height="60"> </object>
+                <h3 class="text-center">Check what time you have to clock-out</h2>
+                <p class="text-center">Please select the time you clock-in? </p>
             </div>
+            <!-- end -->
+            <form id="clockForm" class="row row-cols-lg-auto g-3 align-items-center">
+                <div class="col-12">
+                    <div class="input-group">
+                        <input id ="timeInput" autofocus type="time" class="js-todo-input position-relative" value="">
+                    </div>    
+                </div>
+                <div class="col-12">
+                    <button id="submitButton" type="submit" class="btn btn-success position-relative ">Clock-In</button>
+                </div>
+            </form>
+            <ul class="todo-list js-todo-list"></ul>
         </div>
+        
+        
 
         <svg>
             <defs>
