@@ -93,18 +93,7 @@ form.addEventListener('submit', event => {
   }
 });
 
-const list = document.querySelector('.js-todo-list');
-list.addEventListener('click', event => {
-  if (event.target.classList.contains('js-tick')) {
-    const itemKey = event.target.parentElement.dataset.key;
-    toggleDone(itemKey);
-  }
-  
-  if (event.target.classList.contains('js-delete-todo')) {
-    const itemKey = event.target.parentElement.dataset.key;
-    deleteTodo(itemKey);
-  }
-});
+
 
 var date = new Date();
 var currentDate = date.toISOString().slice(0,10);
