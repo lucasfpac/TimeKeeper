@@ -15,12 +15,8 @@ function renderTodo(todo) {
   node.setAttribute('class', `todo-item ${isChecked}`);
   node.setAttribute('data-key', todo.id);
   node.innerHTML = `
-    <input id="${todo.id}" type="checkbox"/>
-    <label for="${todo.id}" class="tick js-tick"></label>
-    <span style=" font-size: 15px;">${"Clock-in: <b>" + clockIn + "</b>, You will need to clock-out at: <b>" + todo.text+"</b>"}</span>
-    <button class="delete-todo js-delete-todo">
-    <svg><use href="#delete-icon"></use></svg>
-    </button>
+    <span style="color: green;"> &#10004;</span>
+    <span style=" font-size: 15px; text-align: center;">${" Clock-in: <b>" + clockIn + "</b>, You will need to clock-out at: <b>" + todo.text+"</b>"}</span>
   `;
 
   if (item) {
@@ -33,7 +29,7 @@ function renderTodo(todo) {
 function addTodo(text) {
   const todo = {
     text,
-    checked: false,
+    checked: true,
     id: Date.now(),
   };
 
