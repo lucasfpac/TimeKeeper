@@ -176,9 +176,19 @@ input[type="text"] {
   height: 40px;
   border-radius: 10px;
 }
+
 form { 
   margin: 0 auto; 
   width:250px;
   padding-top: 20px;
-  }
+}
+
+footer{
+  color: rgb(85, 84, 84);
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}
   
